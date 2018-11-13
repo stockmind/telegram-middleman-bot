@@ -12,4 +12,4 @@ RUN go install -v ./...
 
 RUN chmod +x docker-entrypoint.sh
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
