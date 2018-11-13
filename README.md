@@ -52,7 +52,7 @@ Alternatively, you can also use a __reverse proxy__ like _nginx_ or [_Caddy_](ht
 }
 ```
 
-## Docker
+## Docker
 
 Build docker image and run
 
