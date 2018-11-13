@@ -51,5 +51,25 @@ Alternatively, you can also use a __reverse proxy__ like _nginx_ or [_Caddy_](ht
 	"origin": "My lonely server script"
 }
 ```
+
+## Docker
+
+Build docker image and run
+
+```
+docker build -t telegram-middleman-bot .
+```
+
+```
+docker run -d \
+-v <absolutepath>/cert.pem:/cert.pem \
+-v <absolutepath>/privkey.pem:/privkey.pem \
+-e BOT_TOKEN='' \
+-e HOST='' \
+-p 8443:8443 \
+--name telegram-middleman-bot \
+telegram-middleman-bot
+```
+
 ## License
 MIT @ [Ferdinand Mütsch](https://ferdinand-muetsch.de)
