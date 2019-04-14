@@ -66,6 +66,7 @@ docker run -d \
 -v <absolutepath>/privkey.pem:/privkey.pem \
 -e BOT_TOKEN='' \
 -e HOST='' \
+-e RATELIMIT=100 \
 -p 8443:8443 \
 --name telegram-middleman-bot \
 telegram-middleman-bot
