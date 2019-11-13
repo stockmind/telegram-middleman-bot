@@ -8,8 +8,6 @@ ENV MODE=webhook
 WORKDIR /go/src/app
 COPY . .
 
-RUN apk add --no-cache curl
-
 RUN apk add --no-cache git && \
     go get -d -v ./... && \
     apk del git
