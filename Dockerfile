@@ -9,10 +9,10 @@ WORKDIR /go/src/app
 COPY . .
 
 RUN apk add --no-cache git && \
-    go get -d -v ./... && \
+    go get ./... && \
     apk del git
 
-RUN go install -v ./...
+RUN go build .
 
 RUN chmod +x docker-entrypoint.sh
 
