@@ -11,11 +11,20 @@ type InMessage struct {
 	RecipientToken string `json:"recipient_token"`
 	Text           string `json:"text"`
 	Origin         string `json:"origin"`
+	File           string `json:"file"`
+	Filename       string `json:"filename"`
+	Type           string `json:"type"`
+}
+
+type TypeResolver struct {
+	IsValid func(InMessage) error
+	Resolve func(string, InMessage) error
+	Value   func(InMessage) string
 }
 
 // Only required fields are implemented
 type TelegramUser struct {
-	Id        int    `json:"id`
+	Id        int    `json:"id"`
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
 	Username  string `json:"username"`
@@ -23,7 +32,7 @@ type TelegramUser struct {
 
 // Only required fields are implemented
 type TelegramChat struct {
-	Id   int    `json:"id`
+	Id   int    `json:"id"`
 	Type string `json:"type"`
 }
 
@@ -60,8 +69,12 @@ type BotConfig struct {
 	UseHTTPS  bool
 	CertPath  string
 	KeyPath   string
+	ProxyURI  string
 	Port      int
 	RateLimit int
+	Address   string
+	Address6  string
+	Disable6  bool
 }
 
 type Stats struct {
