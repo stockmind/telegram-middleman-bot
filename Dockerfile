@@ -1,5 +1,11 @@
 FROM golang:alpine
 
+ENV BOT_TOKEN
+ENV PORT=8443
+ENV HTTPS=false
+ENV RATELIMIT=10
+ENV MODE=webhook
+
 WORKDIR /go/src/app
 COPY . .
 
